@@ -1,0 +1,32 @@
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1280px;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'mobile' {
+        @media (min-width: $breakpoint-mobile) {
+            @content;
+        }
+    } @else if $breakpoint == 'tablet' {
+        @media (min-width: $breakpoint-tablet) {
+            @content;
+        }
+    } @else if $breakpoint == 'desktop' {
+        @media (min-width: $breakpoint-desktop) {
+            @content;
+        }
+    } @else if $breakpoint == 'large' {
+        @media (min-width: $breakpoint-large) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint `#{$breakpoint}`.";
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
