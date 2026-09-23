@@ -2,14 +2,6 @@
 
 $poppins-fonts: (
     (
-        name: 'Thin',
-        weight: 100,
-    ),
-    (
-        name: 'ExtraLight',
-        weight: 200,
-    ),
-    (
         name: 'Light',
         weight: 300,
     ),
@@ -22,20 +14,8 @@ $poppins-fonts: (
         weight: 500,
     ),
     (
-        name: 'SemiBold',
-        weight: 600,
-    ),
-    (
         name: 'Bold',
         weight: 700,
-    ),
-    (
-        name: 'ExtraBold',
-        weight: 800,
-    ),
-    (
-        name: 'Black',
-        weight: 900,
     )
 );
 
@@ -43,34 +23,14 @@ $poppins-fonts: (
     @font-face {
         font-family: 'Poppins';
         font-weight: map.get($font, weight);
-        src: url('/assets/fonts/Poppins/Poppins-#{map.get($font, name)}.ttf');
+        src: url('/assets/fonts/Poppins/Poppins-#{map.get($font, name)}.woff2');
     }
 }
 
 $josefin-fonts: (
     (
-        name: 'Thin',
-        weight: 100,
-    ),
-    (
-        name: 'ExtraLight',
-        weight: 200,
-    ),
-    (
-        name: 'Light',
-        weight: 300,
-    ),
-    (
-        name: 'Regular',
-        weight: 400,
-    ),
-    (
         name: 'Medium',
         weight: 500,
-    ),
-    (
-        name: 'SemiBold',
-        weight: 600,
     ),
     (
         name: 'Bold',
@@ -82,6 +42,6 @@ $josefin-fonts: (
     @font-face {
         font-family: 'Josefin Sans';
         font-weight: map.get($font, weight);
-        src: url('/assets/fonts/Josefin_Sans/static/JosefinSans-#{map.get($font, name)}.ttf');
+        src: url('/assets/fonts/Josefin_Sans/JosefinSans-#{map.get($font, name)}.woff2');
     }
 }
