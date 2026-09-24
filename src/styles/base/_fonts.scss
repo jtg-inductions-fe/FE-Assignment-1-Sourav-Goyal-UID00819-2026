@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+$poppins-fonts: (
+    (
+        name: 'Light',
+        weight: 300,
+    ),
+    (
+        name: 'Regular',
+        weight: 400,
+    ),
+    (
+        name: 'Medium',
+        weight: 500,
+    ),
+    (
+        name: 'Bold',
+        weight: 700,
+    )
+);
+
+@each $font in $poppins-fonts {
+    @font-face {
+        font-family: 'Poppins';
+        font-weight: map.get($font, weight);
+        src: url('/assets/fonts/Poppins/Poppins-#{map.get($font, name)}.woff2');
+    }
+}
+
+$josefin-fonts: (
+    (
+        name: 'Medium',
+        weight: 500,
+    ),
+    (
+        name: 'Bold',
+        weight: 700,
+    )
+);
+
+@each $font in $josefin-fonts {
+    @font-face {
+        font-family: 'Josefin Sans';
+        font-weight: map.get($font, weight);
+        src: url('/assets/fonts/Josefin_Sans/JosefinSans-#{map.get($font, name)}.woff2');
+    }
+}

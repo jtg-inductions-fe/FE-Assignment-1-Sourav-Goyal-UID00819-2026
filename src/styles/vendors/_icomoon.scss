@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('/assets/icomoon-fonts/fonts/icomoon.woff?v1') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+}
+
+.icon-heart::before {
+    content: '\e900';
+}
+
+.icon-mail::before {
+    content: '\e901';
+}
+
+.icon-bag::before {
+    content: '\e902';
+}
+
+.icon-logo::before {
+    content: '\e903';
+}
+
+.icon-profile::before {
+    content: '\e904';
+}
+
+.icon-hamburger::before {
+    content: '\e905';
+}

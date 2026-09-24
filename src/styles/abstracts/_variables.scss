@@ -1,0 +1,39 @@
+$color-brand-primary: #002f52;
+$color-brand-primary-light: #326589;
+$color-brand-accent: #eb9b00;
+
+$gradient-bg: linear-gradient(
+    97.54deg,
+    $color-brand-primary 35.49%,
+    $color-brand-primary-light 165.37%
+);
+
+$color-bg-main: #ffffff;
+$color-bg-secondary: #ebecee;
+
+$color-text-accent: $color-brand-accent;
+$color-text-primary: $color-brand-primary;
+$color-text-body: #000000;
+$color-text-button: $color-bg-main;
+
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Josefin Sans', sans-serif;
+
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 1.875rem;
+$font-size-3xl: 2rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.2;
+$line-height-heading: 1.3;
+$line-height-base: 1.5;
+$line-height-relaxed: 1.6;
