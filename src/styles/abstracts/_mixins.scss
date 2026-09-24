@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
@@ -29,4 +31,26 @@ $breakpoint-large: 1280px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin flex-align {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin focus-ring($color: $color-brand-accent, $offset: 2px) {
+    &:focus-visible {
+        outline: 2px solid $color;
+        outline-offset: $offset;
+    }
+}
+
+@mixin dropdown-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
