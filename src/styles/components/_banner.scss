@@ -1,0 +1,101 @@
+@use '../abstracts' as *;
+
+.banner {
+    width: 100%;
+    background: $gradient-bg;
+    text-align: center;
+    padding: 32px 24px;
+
+    @include respond-to('tablet') {
+        padding: 84px 24px;
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: $color-bg-main;
+        font-size: $font-size-md;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-heading;
+        margin-bottom: 8px;
+
+        @include respond-to('tablet') {
+            font-size: $font-size-4xl;
+            line-height: $line-height-tight;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__subtitle {
+        color: $color-bg-main;
+        font-family: $font-family-primary;
+        font-size: $font-size-base;
+        font-weight: $font-weight-regular;
+        line-height: $line-height-relaxed;
+        max-width: 316px;
+        margin: 0 auto 24px;
+
+        @include respond-to('tablet') {
+            max-width: 479px;
+            margin-bottom: 26px;
+        }
+    }
+
+    &__search-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__search {
+        @include flex-center;
+        gap: 8px;
+        width: 100%;
+        max-width: 380px;
+        height: 44px;
+        padding: 10px 24px;
+        border: 1px solid $color-bg-main;
+        border-radius: 24px;
+        cursor: text;
+
+        @include respond-to('tablet') {
+            max-width: 476px;
+            height: 56px;
+            border-radius: 28px;
+            gap: 10px;
+        }
+
+        @include respond-to('desktop') {
+            max-width: 586px;
+        }
+    }
+
+    &__search-icon {
+        color: $color-bg-main;
+        font-size: 1.5rem;
+    }
+
+    &__search-input {
+        width: 215px;
+        border: none;
+        background: transparent;
+        color: $color-bg-main;
+        font-family: $font-family-primary;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-regular;
+        outline: none;
+
+        &::placeholder {
+            color: $color-bg-main;
+        }
+
+        @include respond-to('tablet') {
+            font-size: $font-size-base;
+            width: 245px;
+        }
+    }
+}
