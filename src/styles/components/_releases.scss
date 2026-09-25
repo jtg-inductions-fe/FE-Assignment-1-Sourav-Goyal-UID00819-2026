@@ -1,0 +1,186 @@
+@use '../abstracts' as *;
+
+.releases {
+    width: 100%;
+
+    &__header {
+        background-color: $color-bg-main;
+        text-align: center;
+        padding: 16px 24px;
+
+        @include respond-to('tablet') {
+            padding: 24px;
+        }
+
+        @include respond-to('desktop') {
+            padding: 28px 24px;
+        }
+    }
+
+    &__title {
+        color: $color-brand-accent;
+        font-size: $font-size-md;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        @include respond-to('tablet') {
+            font-size: 1.625rem;
+        }
+
+        @include respond-to('desktop') {
+            font-size: $font-size-3xl;
+        }
+    }
+
+    &__content {
+        @include flex-center;
+        background-color: $color-bg-secondary;
+        padding: 32px 16px 40px;
+
+        @include respond-to('tablet') {
+            padding: 48px 24px 64px;
+        }
+
+        @include respond-to('desktop') {
+            padding: 64px 24px;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 1342px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+
+        @include respond-to('tablet') {
+            gap: 40px;
+        }
+
+        @include respond-to('desktop') {
+            flex-direction: row;
+            gap: 46px;
+        }
+    }
+}
+
+.carousel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to('desktop') {
+        max-width: 55%;
+    }
+
+    &__dots {
+        @include flex-center;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        @include respond-to('tablet') {
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #c4c4c4;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+
+        @include respond-to('tablet') {
+            width: 12px;
+            height: 12px;
+        }
+
+        &--active {
+            background-color: $color-brand-primary;
+        }
+
+        @include focus-ring;
+    }
+
+    &__track {
+        width: 100%;
+        @include flex-center;
+        gap: 12px;
+
+        @include respond-to('tablet') {
+            gap: 20px;
+        }
+    }
+
+    &__window {
+        overflow: hidden;
+    }
+
+    &__list {
+        display: flex;
+        touch-action: pan-y pinch-zoom;
+    }
+
+    &__item {
+        display: flex;
+        flex: 0 0 170px;
+        margin-right: 20px;
+
+        @include respond-to('tablet') {
+            flex: 0 0 192px;
+        }
+
+        @include respond-to('desktop') {
+            flex: 0 0 180px;
+        }
+    }
+
+    &__cover {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+    }
+
+    &__btn {
+        display: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: $color-brand-primary;
+        color: $color-bg-main;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+
+        @include focus-ring;
+
+        @include respond-to('tablet') {
+            @include flex-center;
+        }
+
+        &:hover {
+            background-color: $color-brand-primary-light;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &--disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        &-icon {
+            font-size: $font-size-lg;
+            color: $color-bg-main;
+        }
+    }
+}
