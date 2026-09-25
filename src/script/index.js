@@ -1,3 +1,5 @@
+import { setupCarousel } from './carousel.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const headerNav = document.getElementById('primary-navigation');
@@ -93,4 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
             menuToggle.focus();
         }
     });
+
+    setupCarousel();
 });
