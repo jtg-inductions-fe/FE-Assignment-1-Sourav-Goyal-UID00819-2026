@@ -1,3 +1,5 @@
+import { setupCarousel } from './carousel.js';
+
 const menuToggle = document.querySelector('.header__menu-btn');
 const headerNav = document.querySelector('.header__nav');
 const dropdownToggle = document.querySelector('.header__nav-link--dropdown');
@@ -108,3 +110,5 @@ if (menuToggle && headerNav) {
         }
     });
 }
+
+setupCarousel();

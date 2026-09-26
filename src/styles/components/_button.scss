@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.button {
+    @include flex-center;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: $color-brand-accent;
+    color: $color-text-button;
+    font-weight: $font-weight-bold;
+    transition: all 0.2s ease;
+
+    @include focus-ring($color-brand-primary);
+
+    &:hover {
+        background-color: #d88b00;
+    }
+}
