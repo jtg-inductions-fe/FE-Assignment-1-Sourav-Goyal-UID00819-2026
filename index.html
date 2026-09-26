@@ -10,7 +10,13 @@
         <header class="header">
             <div class="header__container">
                 <div class="header__logo-area">
-                    <button class="header__menu-btn" type="button">
+                    <button
+                        class="header__menu-btn"
+                        type="button"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation"
+                    >
                         <span
                             class="icon-hamburger header__menu-icon"
                             aria-hidden="true"
@@ -27,8 +33,7 @@
                             aria-hidden="true"
                         ></span>
                         <span class="header__logo-text">
-                            <strong class="header__logo-text--bold"
-                                >Alura</strong
+                            <strong class="header__logo-text">Alura</strong
                             >Books
                         </span>
                     </a>
@@ -41,10 +46,16 @@
                                 href="#categories"
                                 class="header__nav-link header__nav-link--dropdown"
                                 id="dropdown-categories"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                aria-controls="categories-dropdown"
                             >
                                 Categories
                             </a>
-                            <ul class="header__dropdown">
+                            <ul
+                                class="header__dropdown"
+                                id="categories-dropdown"
+                            >
                                 <li class="header__dropdown-item">
                                     <a href="#" class="header__dropdown-link"
                                         >Programming</a
@@ -85,7 +96,11 @@
 
                 <ul class="header__actions">
                     <li class="header__action header__action--favorites">
-                        <a href="#" class="header__action-link">
+                        <a
+                            href="#"
+                            class="header__action-link"
+                            aria-label="My Favorites"
+                        >
                             <span
                                 class="icon-heart header__action-icon"
                                 aria-hidden="true"
@@ -93,7 +108,11 @@
                         </a>
                     </li>
                     <li class="header__action header__action--bag">
-                        <a href="#" class="header__action-link">
+                        <a
+                            href="#"
+                            class="header__action-link"
+                            aria-label="My Bag"
+                        >
                             <span
                                 class="icon-bag header__action-icon"
                                 aria-hidden="true"
