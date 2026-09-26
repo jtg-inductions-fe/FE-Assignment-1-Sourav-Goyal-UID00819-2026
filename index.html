@@ -7,7 +7,136 @@
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
     <body>
-        <div>Hello World</div>
+        <header class="header">
+            <div class="header__container">
+                <div class="header__logo-area">
+                    <button
+                        class="header__menu-btn"
+                        type="button"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        aria-controls="primary-navigation"
+                    >
+                        <span
+                            class="icon-hamburger header__menu-icon"
+                            aria-hidden="true"
+                        ></span>
+                    </button>
+
+                    <a
+                        href="/"
+                        class="header__logo"
+                        aria-label="AluraBooks Home"
+                    >
+                        <span
+                            class="icon-logo header__logo-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="header__logo-text">
+                            <strong class="header__logo-text">Alura</strong
+                            >Books
+                        </span>
+                    </a>
+                </div>
+
+                <nav class="header__nav" id="primary-navigation">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a
+                                href="#categories"
+                                class="header__nav-link header__nav-link--dropdown"
+                                id="dropdown-categories"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                aria-controls="categories-dropdown"
+                            >
+                                Categories
+                            </a>
+                            <ul
+                                class="header__dropdown"
+                                id="categories-dropdown"
+                            >
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link"
+                                        >Programming</a
+                                    >
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link"
+                                        >Frontend</a
+                                    >
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link"
+                                        >Infrastructure</a
+                                    >
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link"
+                                        >Business</a
+                                    >
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link"
+                                        >Design & UX</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Favorites</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link"
+                                >My Bookshelf</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <ul class="header__actions">
+                    <li class="header__action header__action--favorites">
+                        <a
+                            href="#"
+                            class="header__action-link"
+                            aria-label="My Favorites"
+                        >
+                            <span
+                                class="icon-heart header__action-icon"
+                                aria-hidden="true"
+                            ></span>
+                        </a>
+                    </li>
+                    <li class="header__action header__action--bag">
+                        <a
+                            href="#"
+                            class="header__action-link"
+                            aria-label="My Bag"
+                        >
+                            <span
+                                class="icon-bag header__action-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="header__action-label">My Bag</span>
+                        </a>
+                    </li>
+                    <li class="header__action header__action--profile">
+                        <a
+                            href="#"
+                            class="header__action-link"
+                            aria-label="My Profile"
+                        >
+                            <span
+                                class="icon-profile header__action-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="header__action-label">My Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
