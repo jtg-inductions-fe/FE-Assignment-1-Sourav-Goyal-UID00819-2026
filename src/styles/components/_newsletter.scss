@@ -1,0 +1,91 @@
+@use '../abstracts' as *;
+
+.newsletter {
+    background-color: $color-bg-main;
+    padding: 24px 16px;
+
+    @include respond-to('tablet') {
+        padding: 32px 24px 48px;
+    }
+
+    @include respond-to('desktop') {
+        padding: 64px 24px 74px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 400px;
+        margin: 0 auto;
+
+        @include respond-to('tablet') {
+            @include flex-between;
+            flex-direction: row;
+            max-width: 760px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__title {
+        font-size: $font-size-md;
+        font-weight: $font-weight-medium;
+
+        @include respond-to('tablet') {
+            font-size: $font-size-xl;
+        }
+    }
+
+    &__text {
+        color: $color-brand-primary;
+        font-weight: $font-weight-light;
+    }
+
+    &__form {
+        width: 100%;
+
+        @include respond-to('tablet') {
+            width: auto;
+        }
+    }
+
+    &__field {
+        @include flex-align;
+        gap: 10px;
+        height: 44px;
+        padding: 10px 24px;
+        border: 1px solid $color-brand-primary;
+        border-radius: 24px;
+        cursor: text;
+        transition: all 0.2s ease;
+
+        &:focus-within {
+            outline: 2px solid $color-brand-accent;
+            outline-offset: 2px;
+        }
+    }
+
+    &__icon {
+        color: $color-brand-primary;
+        font-size: $font-size-xl;
+    }
+
+    &__input {
+        width: 100%;
+        border: none;
+        color: $color-brand-primary;
+        font-family: $font-family-primary;
+        font-size: $font-size-base;
+        outline: none;
+
+        &::placeholder {
+            color: $color-brand-primary;
+            opacity: 1;
+        }
+    }
+}

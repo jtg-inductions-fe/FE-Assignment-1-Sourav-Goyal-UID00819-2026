@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.topics {
+    background: $gradient-bg;
+    text-align: center;
+    padding: 24px 16px;
+
+    @include respond-to('tablet') {
+        padding: 32px 24px 48px;
+    }
+
+    @include respond-to('desktop') {
+        padding: 64px 24px 74px;
+    }
+
+    &__title {
+        color: $color-bg-main;
+        font-weight: $font-weight-light;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+
+        @include respond-to('tablet') {
+            font-size: $font-size-xl;
+            margin-bottom: 40px;
+        }
+
+        @include respond-to('desktop') {
+            font-size: $font-size-3xl;
+        }
+    }
+
+    &__list {
+        @include flex-center;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 0 auto;
+
+        @include respond-to('tablet') {
+            gap: 24px;
+            max-width: 760px;
+        }
+    }
+
+    &__link {
+        @include flex-center;
+        background-color: $color-brand-accent;
+        color: $color-bg-main;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+        white-space: nowrap;
+        padding: 16px 24px;
+        cursor: default;
+
+        @include focus-ring;
+
+        @include respond-to('tablet') {
+            font-size: $font-size-xl;
+            padding: 24px 32px;
+        }
+    }
+}
