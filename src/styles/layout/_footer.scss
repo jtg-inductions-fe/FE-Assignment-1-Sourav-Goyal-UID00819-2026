@@ -3,14 +3,14 @@
 .footer {
     background-color: $color-bg-footer;
     border-top: 1px solid $color-footer-border;
-    padding: 16px 24px;
+    padding: 1rem 1.5rem;
 
     @include respond-to('tablet') {
-        padding: 24px;
+        padding: 1.5rem;
     }
 
     @include respond-to('desktop') {
-        padding: 28px 24px;
+        padding: 1.75rem 1.5rem;
     }
 
     &__container {
@@ -18,15 +18,15 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 1.5rem;
 
         @include respond-to('tablet') {
             flex-direction: row;
-            gap: 40px;
+            gap: 2.5rem;
         }
 
         @include respond-to('desktop') {
-            gap: 80px;
+            gap: 5rem;
         }
     }
 
@@ -46,11 +46,11 @@
 
         @include respond-to('tablet') {
             flex-direction: row;
-            gap: 32px;
+            gap: 2rem;
         }
 
         @include respond-to('desktop') {
-            gap: 48px;
+            gap: 3rem;
         }
     }
 
@@ -70,7 +70,7 @@
         @include respond-to('tablet') {
             flex: 1;
             border: none;
-            padding-left: 20px;
+            padding-left: 1.25rem;
 
             &:last-child {
                 border-bottom: none;
@@ -82,28 +82,25 @@
         }
 
         @include respond-to('desktop') {
-            padding-left: 24px;
+            padding-left: 1.5rem;
         }
     }
 
     &__category-summary {
         @include flex-between;
         width: 100%;
-        padding: 16px 0;
+        padding: 1rem 0;
         cursor: pointer;
-
-        @include focus-ring;
 
         @include respond-to('tablet') {
             width: auto;
-            padding: 0 0 24px 0;
+            padding: 0 0 1.5rem 0;
             cursor: default;
             pointer-events: none;
         }
     }
 
     &__category-title {
-        font-family: $font-family-primary;
         font-size: $font-size-sm;
         color: $color-footer-title;
         text-transform: uppercase;
@@ -120,14 +117,16 @@
     }
 
     &__item {
-        padding: 0 0 12px 8px;
+        @include flex-align;
+        padding: 0 0 0.75rem 0.5rem;
+        gap: 0.5rem;
 
         &:last-child {
-            padding-bottom: 16px;
+            padding-bottom: 1rem;
         }
 
         @include respond-to('tablet') {
-            padding: 0 0 16px 0;
+            padding: 0 0 1rem 0;
 
             &:last-child {
                 padding-bottom: 0;
@@ -135,11 +134,18 @@
         }
     }
 
+    &__icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        filter: grayscale(100%);
+    }
+
     &__link {
         font-size: $font-size-sm;
         color: $color-footer-link;
         transition: all 0.2s ease;
-
-        @include focus-ring;
     }
 }
