@@ -37,6 +37,7 @@ export function setupCarousel() {
         nextBtn.addEventListener('click', () => carouselApi.scrollNext());
 
         carouselApi.on('select', updateButtons);
+        carouselApi.on('reInit', updateButtons);
         updateButtons();
     }
 
@@ -47,8 +48,8 @@ export function setupCarousel() {
             dotsBox.innerHTML = carouselApi
                 .scrollSnapList()
                 .map(
-                    () =>
-                        '<button class="carousel__dot" type="button" aria-label="Go to slide"></button>',
+                    (_, index) =>
+                        `<button class="carousel__dot" type="button" aria-label="Go to slide ${index}"></button>`,
                 )
                 .join('');
 
@@ -72,5 +73,6 @@ export function setupCarousel() {
         updateActiveDot();
 
         carouselApi.on('select', updateActiveDot);
+        carouselApi.on('reInit', updateActiveDot);
     }
 }

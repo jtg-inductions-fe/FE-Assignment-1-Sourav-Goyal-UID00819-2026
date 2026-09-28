@@ -6,70 +6,59 @@
     &__header {
         background-color: $color-bg-main;
         text-align: center;
-        padding: 16px 24px;
+        padding: 1rem 1.5rem;
 
         @include respond-to('tablet') {
-            padding: 24px;
+            padding: 1.5rem;
         }
 
         @include respond-to('desktop') {
-            padding: 28px 24px;
+            padding: 1.75rem 1.5rem;
         }
     }
 
     &__title {
         color: $color-brand-accent;
-        font-size: $font-size-md;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-
-        @include respond-to('tablet') {
-            font-size: 1.625rem;
-        }
-
-        @include respond-to('desktop') {
-            font-size: $font-size-3xl;
-        }
     }
 
     &__content {
         @include flex-center;
         background-color: $color-bg-secondary;
-        padding: 32px 16px 40px;
+        padding: 2rem 1rem 2.5rem;
 
         @include respond-to('tablet') {
-            padding: 48px 24px 64px;
+            padding: 3rem 1.5rem 4rem;
         }
 
         @include respond-to('desktop') {
-            padding: 64px 24px;
+            padding: 4rem 1.5rem;
         }
     }
 
     &__container {
+        @include flex-align;
         width: 100%;
         max-width: 1342px;
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 32px;
+        gap: 2rem;
 
         @include respond-to('tablet') {
-            gap: 40px;
+            gap: 2.5rem;
         }
 
         @include respond-to('desktop') {
             flex-direction: row;
-            gap: 46px;
+            gap: 2.875rem;
         }
     }
 }
 
 .carousel {
+    @include flex-align;
     width: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
 
     @include respond-to('desktop') {
         max-width: 55%;
@@ -77,12 +66,12 @@
 
     &__dots {
         @include flex-center;
-        gap: 8px;
-        margin-bottom: 16px;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
 
         @include respond-to('tablet') {
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
     }
 
@@ -105,12 +94,12 @@
     }
 
     &__track {
-        width: 100%;
         @include flex-center;
-        gap: 12px;
+        width: 100%;
+        gap: 0.75rem;
 
         @include respond-to('tablet') {
-            gap: 20px;
+            gap: 1.25rem;
         }
     }
 
@@ -126,7 +115,7 @@
     &__item {
         display: flex;
         flex: 0 0 170px;
-        margin-right: 20px;
+        margin-right: 1.25rem;
 
         @include respond-to('tablet') {
             flex: 0 0 192px;
@@ -152,7 +141,7 @@
         border-radius: 50%;
         background-color: $color-brand-primary;
         color: $color-bg-main;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: $dropdown-shadow;
         flex-shrink: 0;
         transition: all 0.2s ease;
 

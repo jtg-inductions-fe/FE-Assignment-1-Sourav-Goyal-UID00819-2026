@@ -28,16 +28,27 @@ h6 {
 
 h1 {
     font-size: $font-size-3xl;
-    line-height: $line-height-tight;
+
+    @include respond-to('tablet') {
+        font-size: $font-size-4xl;
+    }
 }
 
 h2 {
-    font-size: $font-size-2xl;
+    font-size: $font-size-md;
     line-height: $line-height-tight;
+
+    @include respond-to('tablet') {
+        font-size: $font-size-xl-alt;
+    }
+
+    @include respond-to('desktop') {
+        font-size: $font-size-3xl;
+    }
 }
 
 h3 {
-    font-size: $font-size-xl;
+    font-size: $font-size-md;
     line-height: $line-height-heading;
 }
 
@@ -57,4 +68,14 @@ h6 {
     font-size: $font-size-base;
     font-weight: $font-weight-semibold;
     line-height: $line-height-base;
+}
+
+.text-label {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+}
+
+button {
+    font-size: $font-size-base;
 }
