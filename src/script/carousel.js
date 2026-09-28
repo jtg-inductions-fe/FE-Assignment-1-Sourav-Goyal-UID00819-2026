@@ -1,12 +1,16 @@
 import EmblaCarousel from 'embla-carousel';
 
-export function setupCarousel() {
+export function setupCarousel(exclude = []) {
     const carousels = document.querySelectorAll('.carousel');
     if (carousels.length <= 0) {
         return;
     }
 
     carousels.forEach((carousel) => {
+        if (exclude.some((item) => carousel.matches(item))) {
+            return;
+        }
+
         const windowEl = carousel.querySelector('.carousel__window');
         if (!windowEl) {
             return;
