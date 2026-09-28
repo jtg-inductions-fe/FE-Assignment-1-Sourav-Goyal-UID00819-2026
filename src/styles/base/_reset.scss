@@ -37,3 +37,13 @@ ul,
 ol {
     list-style: none;
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 2px solid #eb9b00;
+    outline-offset: 2px;
+}

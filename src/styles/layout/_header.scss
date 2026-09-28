@@ -11,11 +11,11 @@
         height: 100%;
         margin: 0 auto;
         max-width: 1828px;
-        padding: 16px 24px 16px 0px;
+        padding: 1rem 1.5rem 1rem 0;
 
         @include respond-to('tablet') {
             justify-content: flex-start;
-            padding: 16px 24px;
+            padding: 1rem 1.5rem;
         }
     }
 
@@ -23,7 +23,7 @@
         gap: 0.8rem;
         @include flex-align;
         @include respond-to('tablet') {
-            margin-right: 40px;
+            margin-right: 2.5rem;
         }
     }
 
@@ -34,8 +34,6 @@
         color: $color-brand-primary;
         font-size: 1.5rem;
         border-radius: 4px;
-
-        @include focus-ring;
 
         &--active {
             background: $gradient-bg;
@@ -50,8 +48,6 @@
 
     &__logo {
         @include flex-align;
-
-        @include focus-ring($color-brand-accent, 4px);
     }
 
     &__logo-icon {
@@ -61,7 +57,7 @@
 
     &__logo-text {
         display: none;
-        margin-left: 11px;
+        margin-left: 0.6875rem;
         font-family: $font-family-secondary;
         font-size: $font-size-2xl;
         font-weight: $font-weight-regular;
@@ -86,10 +82,11 @@
         max-width: 80vw;
         background-color: $color-bg-main;
         transform: translateX(-100%);
-
-        @include dropdown-shadow;
+        display: none;
+        box-shadow: $dropdown-shadow;
 
         &--open {
+            display: block;
             transform: translateX(0);
         }
 
@@ -121,11 +118,9 @@
 
     &__nav-link {
         display: block;
-        padding: 14px 24px;
+        padding: 0.875rem 1.5rem;
         text-transform: uppercase;
         transition: all 0.2s ease;
-
-        @include focus-ring;
 
         &:hover {
             background: $gradient-bg;
@@ -133,7 +128,8 @@
         }
 
         &--dropdown {
-            transition: all 0.2 ease;
+            transition: all 0.2s ease;
+
             &--active,
             &[aria-expanded='true'] {
                 background: transparent;
@@ -149,7 +145,7 @@
         }
 
         @include respond-to('tablet') {
-            padding: 10px;
+            padding: 0.625rem;
         }
     }
 
@@ -171,8 +167,7 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s ease;
-
-            @include dropdown-shadow;
+            box-shadow: $dropdown-shadow;
 
             .header__nav-item--dropdown:hover &,
             .header__nav-item--dropdown:focus-within & {
@@ -188,11 +183,9 @@
 
     &__dropdown-link {
         display: block;
-        padding: 14px 24px;
+        padding: 0.875rem 1.5rem;
         font-weight: $font-weight-medium;
         text-transform: uppercase;
-
-        @include focus-ring;
 
         &:hover {
             background: $gradient-bg;
@@ -200,17 +193,17 @@
         }
 
         @include respond-to('tablet') {
-            padding: 14px 20px;
+            padding: 0.875rem 1.25rem;
             font-weight: $font-weight-regular;
         }
     }
 
     &__actions {
         @include flex-align;
-        gap: 8px;
+        gap: 0.5rem;
 
         @include respond-to('tablet') {
-            gap: 20px;
+            gap: 1.25rem;
             margin-left: auto;
         }
     }
@@ -227,12 +220,10 @@
 
     &__action-link {
         @include flex-align;
-        gap: 8px;
-        padding: 8px;
+        gap: 0.5rem;
+        padding: 0.5rem;
         color: $color-text-primary;
         border-radius: 4px;
-
-        @include focus-ring;
     }
 
     &__action-icon {
