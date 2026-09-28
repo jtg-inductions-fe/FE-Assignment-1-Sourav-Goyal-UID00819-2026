@@ -3,41 +3,36 @@
 .topics {
     background: $gradient-bg;
     text-align: center;
-    padding: 24px 16px;
+    padding: 1.5rem 1rem;
 
     @include respond-to('tablet') {
-        padding: 32px 24px 48px;
+        padding: 2rem 1.5rem 3rem;
     }
 
     @include respond-to('desktop') {
-        padding: 64px 24px 74px;
+        padding: 4rem 1.5rem 4.625rem;
     }
 
     &__title {
         color: $color-bg-main;
         font-weight: $font-weight-light;
         text-transform: uppercase;
-        margin-bottom: 24px;
+        margin-bottom: 1.5rem;
 
         @include respond-to('tablet') {
-            font-size: $font-size-xl;
-            margin-bottom: 40px;
-        }
-
-        @include respond-to('desktop') {
-            font-size: $font-size-3xl;
+            margin-bottom: 2.5rem;
         }
     }
 
     &__list {
         @include flex-center;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 1rem;
         margin: 0 auto;
 
         @include respond-to('tablet') {
-            gap: 24px;
-            max-width: 760px;
+            gap: 1.5rem;
+            max-width: 47.5rem;
         }
     }
 
@@ -45,17 +40,13 @@
         @include flex-center;
         background-color: $color-brand-accent;
         color: $color-bg-main;
-        font-size: $font-size-sm;
         font-weight: $font-weight-bold;
         white-space: nowrap;
-        padding: 16px 24px;
+        padding: 1rem 1.5rem;
         cursor: default;
 
-        @include focus-ring;
-
         @include respond-to('tablet') {
-            font-size: $font-size-xl;
-            padding: 24px 32px;
+            padding: 1.5rem 2rem;
         }
     }
 }
