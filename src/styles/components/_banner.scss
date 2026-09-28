@@ -4,10 +4,10 @@
     width: 100%;
     background: $gradient-bg;
     text-align: center;
-    padding: 32px 24px;
+    padding: 2rem 1.5rem;
 
     @include respond-to('tablet') {
-        padding: 84px 24px;
+        padding: 5.25rem 1.5rem;
     }
 
     &__container {
@@ -19,29 +19,22 @@
     &__title {
         color: $color-bg-main;
         font-size: $font-size-md;
-        font-weight: $font-weight-bold;
-        line-height: $line-height-heading;
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
 
         @include respond-to('tablet') {
             font-size: $font-size-4xl;
-            line-height: $line-height-tight;
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
         }
     }
 
     &__subtitle {
         color: $color-bg-main;
-        font-family: $font-family-primary;
-        font-size: $font-size-base;
-        font-weight: $font-weight-regular;
-        line-height: $line-height-relaxed;
         max-width: 316px;
-        margin: 0 auto 24px;
+        margin: 0 auto 1.5rem;
 
         @include respond-to('tablet') {
             max-width: 479px;
-            margin-bottom: 26px;
+            margin-bottom: 1.625rem;
         }
     }
 
@@ -53,11 +46,11 @@
 
     &__search {
         @include flex-center;
-        gap: 8px;
+        gap: 0.5rem;
         width: 100%;
         max-width: 380px;
         height: 44px;
-        padding: 10px 24px;
+        padding: 0.625rem 1.5rem;
         border: 1px solid $color-bg-main;
         border-radius: 24px;
         cursor: text;
@@ -66,7 +59,7 @@
             max-width: 476px;
             height: 56px;
             border-radius: 28px;
-            gap: 10px;
+            gap: 0.625rem;
         }
 
         @include respond-to('desktop') {
