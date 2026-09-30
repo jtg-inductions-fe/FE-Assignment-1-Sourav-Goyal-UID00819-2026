@@ -24,15 +24,19 @@
         }
     }
 
+    &__container {
+        @include flex-center;
+        flex-direction: column;
+    }
+
     &__list {
         @include flex-center;
         flex-wrap: wrap;
         gap: 1rem;
-        margin: 0 auto;
 
         @include respond-to('tablet') {
             gap: 1.5rem;
-            max-width: 47.5rem;
+            max-width: rem(768);
         }
     }
 

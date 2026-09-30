@@ -1,0 +1,6 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+@function rem($px) {
+    @return math.div($px, 16) * 1rem;
+}

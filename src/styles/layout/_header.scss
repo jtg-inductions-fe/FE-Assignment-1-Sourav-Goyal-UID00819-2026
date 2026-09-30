@@ -10,7 +10,7 @@
         @include flex-between;
         height: 100%;
         margin: 0 auto;
-        max-width: 1828px;
+        max-width: rem(1828);
         padding: 1rem 1.5rem 1rem 0;
 
         @include respond-to('tablet') {
@@ -64,18 +64,13 @@
         letter-spacing: -0.02em;
         flex-shrink: 0;
 
-        strong {
-            display: inline-block;
-            font-weight: $font-weight-bold;
-        }
-
         @include respond-to('tablet') {
             display: block;
         }
     }
 
     &__nav {
-        position: fixed;
+        position: absolute;
         top: 80px;
         left: 0;
         width: 290px;
@@ -84,6 +79,7 @@
         transform: translateX(-100%);
         display: none;
         box-shadow: $dropdown-shadow;
+        z-index: 100;
 
         &--open {
             display: block;
@@ -116,7 +112,8 @@
         position: relative;
     }
 
-    &__nav-link {
+    &__nav-link,
+    &__dropdown-link {
         display: block;
         padding: 0.875rem 1.5rem;
         text-transform: uppercase;
@@ -137,7 +134,8 @@
             }
 
             @include respond-to('tablet') {
-                &:hover {
+                &:hover,
+                &:focus-visible {
                     background: $gradient-bg;
                     color: $color-bg-main;
                 }
@@ -182,18 +180,10 @@
     }
 
     &__dropdown-link {
-        display: block;
-        padding: 0.875rem 1.5rem;
         font-weight: $font-weight-medium;
-        text-transform: uppercase;
-
-        &:hover {
-            background: $gradient-bg;
-            color: $color-bg-main;
-        }
+        padding: 0.875rem 1.25rem;
 
         @include respond-to('tablet') {
-            padding: 0.875rem 1.25rem;
             font-weight: $font-weight-regular;
         }
     }

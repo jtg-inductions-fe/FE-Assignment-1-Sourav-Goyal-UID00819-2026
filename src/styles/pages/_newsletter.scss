@@ -13,16 +13,17 @@
     }
 
     &__container {
-        display: flex;
+        @include flex-center;
+    }
+
+    &__content {
+        @include flex-between;
         flex-direction: column;
         gap: 1.5rem;
-        max-width: 25rem;
-        margin: 0 auto;
 
         @include respond-to('tablet') {
-            @include flex-between;
             flex-direction: row;
-            max-width: 47.5rem;
+            max-width: rem(768);
         }
     }
 
