@@ -6,13 +6,13 @@
     box-shadow: $dropdown-shadow;
     padding: 1.5rem;
     width: 100%;
-    max-width: 500px;
+    max-width: rem(500);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 
     @include respond-to('tablet') {
-        max-width: 588px;
+        max-width: rem(588);
     }
 
     &__top {
@@ -40,6 +40,11 @@
 
     &__tag {
         color: $color-brand-accent;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        overflow: hidden;
 
         @include respond-to('desktop') {
             font-size: $font-size-3xl;
@@ -48,6 +53,11 @@
 
     &__text {
         font-size: $font-size-sm;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
 
         @include respond-to('tablet') {
             font-size: $font-size-base;
@@ -55,11 +65,11 @@
     }
 
     &__img-box {
-        max-width: 130px;
+        max-width: rem(130);
         @include flex-center;
 
         @include respond-to('tablet') {
-            max-width: 150px;
+            max-width: rem(150);
         }
     }
 
@@ -90,10 +100,10 @@
     }
 
     &__btn {
-        width: 130px;
+        width: rem(130);
 
         @include respond-to('tablet') {
-            width: 150px;
+            width: rem(150);
         }
     }
 }

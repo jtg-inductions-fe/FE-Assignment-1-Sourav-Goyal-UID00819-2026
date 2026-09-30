@@ -1,12 +1,30 @@
 import EmblaCarousel from 'embla-carousel';
 
-export function setupCarousel(exclude = []) {
-    const carousels = document.querySelectorAll('.carousel');
+export function setupCarousel(config = {}) {
+    const {
+        selector = '.carousel',
+        include = [],
+        exclude = [],
+        emblaOptions = {},
+        navigation = true,
+        dots = true,
+        onInit,
+        onSelect,
+    } = config;
+
+    const carousels = document.querySelectorAll(selector);
     if (carousels.length <= 0) {
         return;
     }
 
     carousels.forEach((carousel) => {
+        if (
+            include.length > 0 &&
+            !include.some((sel) => carousel.matches(sel))
+        ) {
+            return;
+        }
+
         if (exclude.some((item) => carousel.matches(item))) {
             return;
         }
@@ -23,11 +41,12 @@ export function setupCarousel(exclude = []) {
         const options = {
             align: 'start',
             slidesToScroll: 1,
+            ...emblaOptions,
         };
 
         const carouselApi = EmblaCarousel(windowEl, options);
 
-        if (prevBtn && nextBtn) {
+        if (navigation && prevBtn && nextBtn) {
             const updateButtons = () => {
                 if (carouselApi.canScrollPrev()) {
                     prevBtn.classList.remove('carousel__btn--disabled');
@@ -50,7 +69,7 @@ export function setupCarousel(exclude = []) {
             updateButtons();
         }
 
-        if (dotsBox) {
+        if (dots && dotsBox) {
             let dotBtns = [];
 
             const createDots = () => {
@@ -58,7 +77,7 @@ export function setupCarousel(exclude = []) {
                     .scrollSnapList()
                     .map(
                         (_, index) =>
-                            `<button class="carousel__dot" type="button" aria-label="Go to slide ${index}"></button>`,
+                            `<button class="carousel__dot" type="button" aria-label="Go to slide ${index + 1}"></button>`,
                     )
                     .join('');
 
@@ -88,6 +107,14 @@ export function setupCarousel(exclude = []) {
 
             carouselApi.on('select', updateActiveDot);
             carouselApi.on('reInit', updateActiveDot);
+        }
+
+        if (typeof onSelect === 'function') {
+            carouselApi.on('select', () => onSelect(carouselApi, carousel));
+        }
+
+        if (typeof onInit === 'function') {
+            onInit(carouselApi, carousel);
         }
     });
 }

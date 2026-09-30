@@ -58,17 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     dropdownToggle.addEventListener('click', function (event) {
-        if (window.innerWidth < 768) {
-            event.preventDefault();
-            event.stopPropagation();
-            toggleDropdown();
-        }
+        event.stopPropagation();
+        toggleDropdown();
     });
 
     window.addEventListener('resize', function () {
-        if (window.innerWidth >= 768) {
-            closeNav();
-        }
+        closeNav();
     });
 
     navLinks.forEach(function (link) {
