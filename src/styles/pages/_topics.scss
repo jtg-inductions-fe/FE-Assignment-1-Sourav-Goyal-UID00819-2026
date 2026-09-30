@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+.topics {
+    background: $gradient-bg;
+    text-align: center;
+    padding: 1.5rem 1rem;
+
+    @include respond-to('tablet') {
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    @include respond-to('desktop') {
+        padding: 4rem 1.5rem 4.625rem;
+    }
+
+    &__title {
+        color: $color-bg-main;
+        font-weight: $font-weight-light;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+
+        @include respond-to('tablet') {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__list {
+        @include flex-center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0 auto;
+
+        @include respond-to('tablet') {
+            gap: 1.5rem;
+            max-width: 47.5rem;
+        }
+    }
+
+    &__link {
+        @include flex-center;
+        background-color: $color-brand-accent;
+        color: $color-bg-main;
+        font-weight: $font-weight-bold;
+        white-space: nowrap;
+        padding: 1rem 1.5rem;
+        cursor: default;
+
+        @include respond-to('tablet') {
+            padding: 1.5rem 2rem;
+        }
+    }
+}
