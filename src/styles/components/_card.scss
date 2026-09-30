@@ -28,6 +28,16 @@
         flex: 1;
     }
 
+    &__rating {
+        display: flex;
+        gap: 4px;
+    }
+
+    &__star {
+        color: $color-brand-accent;
+        font-size: $font-size-sm;
+    }
+
     &__tag {
         color: $color-brand-accent;
 
@@ -49,7 +59,7 @@
         @include flex-center;
 
         @include respond-to('tablet') {
-            max-width: 160px;
+            max-width: 150px;
         }
     }
 

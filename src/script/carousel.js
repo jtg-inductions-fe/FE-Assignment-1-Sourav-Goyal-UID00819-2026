@@ -1,78 +1,93 @@
 import EmblaCarousel from 'embla-carousel';
 
-export function setupCarousel() {
-    const carousel = document.querySelector('.carousel');
-    if (!carousel) {
+export function setupCarousel(exclude = []) {
+    const carousels = document.querySelectorAll('.carousel');
+    if (carousels.length <= 0) {
         return;
     }
 
-    const windowEl = carousel.querySelector('.carousel__window');
-    const prevBtn = carousel.querySelector('.carousel__btn--prev');
-    const nextBtn = carousel.querySelector('.carousel__btn--next');
-    const dotsBox = carousel.querySelector('.carousel__dots');
+    carousels.forEach((carousel) => {
+        if (exclude.some((item) => carousel.matches(item))) {
+            return;
+        }
 
-    const options = {
-        align: 'start',
-        slidesToScroll: 3,
-    };
+        const windowEl = carousel.querySelector('.carousel__window');
+        if (!windowEl) {
+            return;
+        }
 
-    const carouselApi = EmblaCarousel(windowEl, options);
+        const prevBtn = carousel.querySelector('.carousel__btn--prev');
+        const nextBtn = carousel.querySelector('.carousel__btn--next');
+        const dotsBox = carousel.querySelector('.carousel__dots');
 
-    if (prevBtn && nextBtn) {
-        const updateButtons = () => {
-            if (carouselApi.canScrollPrev()) {
-                prevBtn.classList.remove('carousel__btn--disabled');
-            } else {
-                prevBtn.classList.add('carousel__btn--disabled');
-            }
-
-            if (carouselApi.canScrollNext()) {
-                nextBtn.classList.remove('carousel__btn--disabled');
-            } else {
-                nextBtn.classList.add('carousel__btn--disabled');
-            }
+        const options = {
+            align: 'start',
+            slidesToScroll: 1,
         };
 
-        prevBtn.addEventListener('click', () => carouselApi.scrollPrev());
-        nextBtn.addEventListener('click', () => carouselApi.scrollNext());
+        const carouselApi = EmblaCarousel(windowEl, options);
 
-        carouselApi.on('select', updateButtons);
-        carouselApi.on('reInit', updateButtons);
-        updateButtons();
-    }
+        if (prevBtn && nextBtn) {
+            const updateButtons = () => {
+                if (carouselApi.canScrollPrev()) {
+                    prevBtn.classList.remove('carousel__btn--disabled');
+                } else {
+                    prevBtn.classList.add('carousel__btn--disabled');
+                }
 
-    if (dotsBox) {
-        let dotBtns = [];
+                if (carouselApi.canScrollNext()) {
+                    nextBtn.classList.remove('carousel__btn--disabled');
+                } else {
+                    nextBtn.classList.add('carousel__btn--disabled');
+                }
+            };
 
-        const createDots = () => {
-            dotsBox.innerHTML = carouselApi
-                .scrollSnapList()
-                .map(
-                    (_, index) =>
-                        `<button class="carousel__dot" type="button" aria-label="Go to slide ${index}"></button>`,
-                )
-                .join('');
+            prevBtn.addEventListener('click', () => carouselApi.scrollPrev());
+            nextBtn.addEventListener('click', () => carouselApi.scrollNext());
 
-            dotBtns = Array.from(dotsBox.querySelectorAll('.carousel__dot'));
-            dotBtns.forEach((dot, index) => {
-                dot.addEventListener('click', () =>
-                    carouselApi.scrollTo(index),
+            carouselApi.on('select', updateButtons);
+            carouselApi.on('reInit', updateButtons);
+            updateButtons();
+        }
+
+        if (dotsBox) {
+            let dotBtns = [];
+
+            const createDots = () => {
+                dotsBox.innerHTML = carouselApi
+                    .scrollSnapList()
+                    .map(
+                        (_, index) =>
+                            `<button class="carousel__dot" type="button" aria-label="Go to slide ${index}"></button>`,
+                    )
+                    .join('');
+
+                dotBtns = Array.from(
+                    dotsBox.querySelectorAll('.carousel__dot'),
                 );
-            });
-        };
 
-        const updateActiveDot = () => {
-            const prev = carouselApi.previousScrollSnap();
-            const current = carouselApi.selectedScrollSnap();
+                dotBtns.forEach((dot, index) => {
+                    dot.addEventListener('click', () =>
+                        carouselApi.scrollTo(index),
+                    );
+                });
+            };
 
-            dotBtns[prev]?.classList.remove('carousel__dot--active');
-            dotBtns[current]?.classList.add('carousel__dot--active');
-        };
+            const updateActiveDot = () => {
+                const current = carouselApi.selectedScrollSnap();
+                dotBtns.forEach((dot, index) => {
+                    dot.classList.toggle(
+                        'carousel__dot--active',
+                        index === current,
+                    );
+                });
+            };
 
-        createDots();
-        updateActiveDot();
+            createDots();
+            updateActiveDot();
 
-        carouselApi.on('select', updateActiveDot);
-        carouselApi.on('reInit', updateActiveDot);
-    }
+            carouselApi.on('select', updateActiveDot);
+            carouselApi.on('reInit', updateActiveDot);
+        }
+    });
 }
