@@ -1,7 +1,10 @@
+@use 'variables' as *;
+
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 $breakpoint-large: 1280px;
+$dropdown-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 
 @mixin respond-to($breakpoint) {
     @if $breakpoint == 'mobile' {
@@ -29,4 +32,15 @@ $breakpoint-large: 1280px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin flex-align {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
