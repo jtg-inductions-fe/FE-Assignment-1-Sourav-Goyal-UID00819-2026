@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.book-card {
+    background-color: $color-bg-main;
+    border-radius: 10px;
+    box-shadow: $dropdown-shadow;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include respond-to('tablet') {
+        max-width: 588px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+    }
+
+    &__tag {
+        color: $color-brand-accent;
+
+        @include respond-to('desktop') {
+            font-size: $font-size-3xl;
+        }
+    }
+
+    &__text {
+        font-size: $font-size-sm;
+
+        @include respond-to('tablet') {
+            font-size: $font-size-base;
+        }
+    }
+
+    &__img-box {
+        max-width: 130px;
+        @include flex-center;
+
+        @include respond-to('tablet') {
+            max-width: 160px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    &__bottom {
+        @include flex-between;
+        gap: 1rem;
+    }
+
+    &__icons {
+        @include flex-align;
+        gap: 0.75rem;
+    }
+
+    &__icon-btn {
+        padding: 0.5rem;
+        @include flex-center;
+    }
+
+    &__icon {
+        font-size: $font-size-xl;
+        color: $color-brand-primary;
+    }
+
+    &__btn {
+        width: 130px;
+
+        @include respond-to('tablet') {
+            width: 150px;
+        }
+    }
+}

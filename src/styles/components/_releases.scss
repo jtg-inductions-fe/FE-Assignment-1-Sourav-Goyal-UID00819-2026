@@ -1,0 +1,171 @@
+@use '../abstracts' as *;
+
+.releases {
+    width: 100%;
+
+    &__header {
+        background-color: $color-bg-main;
+        text-align: center;
+        padding: 1rem 1.5rem;
+
+        @include respond-to('tablet') {
+            padding: 1.5rem;
+        }
+
+        @include respond-to('desktop') {
+            padding: 1.75rem 1.5rem;
+        }
+    }
+
+    &__title {
+        color: $color-brand-accent;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    &__content {
+        @include flex-center;
+        background-color: $color-bg-secondary;
+        padding: 2rem 1rem 2.5rem;
+
+        @include respond-to('tablet') {
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        @include respond-to('desktop') {
+            padding: 4rem 1.5rem;
+        }
+    }
+
+    &__container {
+        @include flex-align;
+        width: 100%;
+        max-width: 1342px;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include respond-to('tablet') {
+            gap: 2.5rem;
+        }
+
+        @include respond-to('desktop') {
+            flex-direction: row;
+            gap: 2.875rem;
+        }
+    }
+}
+
+.carousel {
+    @include flex-align;
+    width: 100%;
+    flex-direction: column;
+
+    @include respond-to('desktop') {
+        max-width: 55%;
+    }
+
+    &__dots {
+        @include flex-center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        @include respond-to('tablet') {
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #c4c4c4;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+
+        @include respond-to('tablet') {
+            width: 12px;
+            height: 12px;
+        }
+
+        &--active {
+            background-color: $color-brand-primary;
+        }
+    }
+
+    &__track {
+        @include flex-center;
+        width: 100%;
+        gap: 0.75rem;
+
+        @include respond-to('tablet') {
+            gap: 1.25rem;
+        }
+    }
+
+    &__window {
+        overflow: hidden;
+    }
+
+    &__list {
+        display: flex;
+        touch-action: pan-y pinch-zoom;
+    }
+
+    &__item {
+        display: flex;
+        flex: 0 0 170px;
+        margin-right: 1.25rem;
+
+        @include respond-to('tablet') {
+            flex: 0 0 192px;
+        }
+
+        @include respond-to('desktop') {
+            flex: 0 0 180px;
+        }
+    }
+
+    &__cover {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+    }
+
+    &__btn {
+        display: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: $color-brand-primary;
+        color: $color-bg-main;
+        box-shadow: $dropdown-shadow;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+
+        @include respond-to('tablet') {
+            @include flex-center;
+        }
+
+        &:hover {
+            background-color: $color-brand-primary-light;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &--disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        &-icon {
+            font-size: $font-size-lg;
+            color: $color-bg-main;
+        }
+    }
+}

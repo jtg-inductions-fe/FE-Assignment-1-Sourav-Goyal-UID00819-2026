@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.button {
+    @include flex-center;
+    min-height: 48px;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    background-color: $color-brand-accent;
+    color: $color-text-button;
+    font-weight: $font-weight-bold;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #d88b00;
+    }
+
+    &:focus-visible {
+        outline: 3px solid $color-brand-primary;
+        outline-offset: 3px;
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:disabled {
+        background-color: $color-bg-disabled;
+        color: $color-text-disabled;
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.7;
+    }
+
+    &:disabled:hover {
+        background-color: $color-bg-disabled;
+    }
+}
